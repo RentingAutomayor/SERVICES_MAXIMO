@@ -14,10 +14,7 @@ import java.io.IOException;
  */
 public class Diegokm {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static Integer intValidate = 10;
+    public static Integer intValidate = 14;
     public static String sPassword = "Malangas123*";
     public static String  sUser = "C.MALAVER";
 
@@ -73,7 +70,7 @@ public class Diegokm {
                 break;
             case 9:
                 //poner a 0 km de activos tr
-                Ponera0km objPonera0km = new Ponera0km();
+                Ponera0km objPonera0km = new Ponera0km(sPassword,sUser);
                 objPonera0km.Leerxmlpapa();
                 break;
             case 10:
@@ -90,6 +87,16 @@ public class Diegokm {
                 //cargar datos de gerentes a avvillas 
                 CargarAvvillas objCargarAvvillas = new CargarAvvillas();
                 objCargarAvvillas.readCsv();
+                break;
+            case 13:
+                //Vuelve a 0 los registros de los kilometrajes para placas seleccionadas
+                Reset0Act objReset0Act = new Reset0Act(sPassword,sUser);
+                objReset0Act.Reset0Act();
+                break;
+            case 14:
+                //Vuelve a 0 los valores actuales de lo kilometrajes para placas seleccionadas
+                NuevoPonerA0KM objNuevoPonerA0KM = new NuevoPonerA0KM(sPassword,sUser);
+                objNuevoPonerA0KM.NuevoPonerA0KM();
                 break;
             
         }

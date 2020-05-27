@@ -116,14 +116,14 @@ public class Mpcount {
     }
     public static String FormatearCadenaDeParametros(String Count) {
         
-        int co = Integer.parseInt(Count) + 1; 
+        int co = Integer.parseInt(Count); 
         String conts = "&PMCOUNTER="+Count;
         return conts;
     }
     public void Leerxmlpapa() throws IOException {
         
         try {
-            File archivo = new File("A:\\netbeans\\xmldemp.xml");
+            File archivo = new File("A:\\pmcounter.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
             Document document = documentBuilder.parse(archivo);

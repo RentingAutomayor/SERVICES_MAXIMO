@@ -26,6 +26,16 @@ import org.w3c.dom.NodeList;
  */
 public class Ponera0km {
     
+     //inicializa las credenciales
+    public String sPassword = "";
+    public String sUser = "";
+
+    //trae las credenciales
+    public Ponera0km(String pass, String usu) {
+        this.sPassword = pass;
+        this.sUser = usu;
+    }
+    
     public String srtUrlFile;
     private final static String USER_AGENT = "Mozilla/5.0";
     private static HttpURLConnection con;
@@ -33,9 +43,7 @@ public class Ponera0km {
     public static final String QUOTE = "\"";
 
     public void SendPost(String id, String sParameters) throws Exception {
-        String sPassword = "Malangas123*";
-        String sUser = "C.MALAVER";
-        String url = "https://rentingautomayor.maximo.com/maxrest_b1dk/rest/mbo/ASSETMETER/" + id + "?_lid=" + sUser + "&_lpwd=" + sPassword;
+        String url = "https://rentingautomayor-test.maximo.com/maxrest_b1dk/rest/mbo/ASSETMETER/" + id + "?_lid=" + sUser + "&_lpwd=" + sPassword;
         String urlParameters = sParameters;
         System.out.println(url + "" + sParameters);
         byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
@@ -74,7 +82,7 @@ public class Ponera0km {
 
     public void Leerxmlpapa() throws IOException {
         try {
-            File archivo = new File("A://ponera0km.xml");
+            File archivo = new File("A://GETPLACAS.xml");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
                     .newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
